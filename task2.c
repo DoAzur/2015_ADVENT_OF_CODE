@@ -1,11 +1,15 @@
 #include <stdio.h>
-int main(void) 
+int main(int argc, char *argv[]) 
 {
     int ans = 0;
     int cnt = 0;
     char element;
     FILE *input = NULL;
-    input = fopen("data.txt", "r");
+    if (argc != 2) {
+        printf("error\n");
+        return -1;
+    }
+    input = fopen(argv[1], "r");
     if (input == NULL) {
         printf("error\n");
         return -1;
